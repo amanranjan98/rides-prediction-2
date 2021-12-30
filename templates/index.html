@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/style.css')}}">
+    <script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <title>Rides Prediction</title>
+</head>
+<body>
+    <!-- Website Title -->
+    <div class="container">
+        <h2 class='container-heading'><span class="heading_font">Rides Predictor</span></h2>
+        <div class='description'>
+            <p>B.Tech Project (2018 Batch)</p>
+        </div>
+    </div>
+
+   <!-- Text Area -->
+    <div class="ml-container">
+        <form action="{{url_for('predict')}}" method="POST">
+            <input class="form-input" type="text" name="Priceperweek" placeholder="Price per week eg. 25" required="required"><br>
+            <input class="form-input" type="text" name="Population" placeholder="Population eg.1800000" required="required"><br>
+            <input class="form-input" type="text" name="Monthlyincome" placeholder="Monthly income eg. 20000" required="required"><br>
+            <input class="form-input" type="text" name="Averageparkingpermonth" placeholder="Average parking per month eg. 90" required="required"><br>
+            <button type="submit" class="my-cta-button">Predict</button>
+        </form>
+    </div>
+    <br>
+    <br>
+    {{ prediction_text }}
+    <br>
+    <br>
+
+    <!-- Footer -->
+    <div class='footer'>
+        <div class="contact">
+            <a target="_blank" href="www.linkedin.com/in/aman-ranjan-20b2631a1"><i class="fab fa-linkedin fa-lg contact-icon"></i></a>
+        </div>
+        <p class='footer-description'>Develop by Aman Ranjan and Adarsh Shankar (NIST,Berhampur)</p>
+    </div>
+
+</body>
+</html>
